@@ -387,7 +387,7 @@ class Normalisation:
                 sample_text = sample_text.replace(character[0], character[1])
 
             # write dictionary to csv for debugging purpose
-            self.write_to_csv(dict_normalization)
+            #self.write_to_csv(dict_normalization)
 
         # Normalise some characters that could still be in ending
         characters_to_normalise = config.characters_to_normalise
@@ -463,7 +463,7 @@ def main():
             expansions.expanded_words_errors.append(word)
 
     # Write and print expanded text for debugging
-    sample_text.write_text("../output/01_text_after_expansion.txt")
+    sample_text.write_text("../output/V_13_01_text_after_expansion.txt")
 
     # Initialize Normalisation object
     normalisation = Normalisation(lexicon.df)
@@ -472,13 +472,13 @@ def main():
     sample_text.text = normalisation.word_segmentation(sample_text.text)
 
     # Write and print expanded text for debugging
-    sample_text.write_text("../output/02_text_after_segmentation.txt")
+    sample_text.write_text("../output/V_13_02_text_after_segmentation.txt")
 
     # Normalise text
     sample_text.text = normalisation.normalise_text(sample_text.text)
 
     # Write and print expanded text for debugging
-    sample_text.write_text("../output/03_text_after_normalisation.txt")
+    sample_text.write_text("../output/V_13_03_text_after_normalisation.txt")
 
 
 if __name__ == "__main__":
